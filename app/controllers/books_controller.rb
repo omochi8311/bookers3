@@ -1,10 +1,10 @@
 class BooksController < ApplicationController
   def new
+    @book = Book.new
   end
 
   def create
-
-  book = Book.new(books_params)
+  book = Book.new(book_params)
   book.save
   redirect_to’/show’
   end
@@ -22,9 +22,4 @@ class BooksController < ApplicationController
   def edit
   end
 
-  private
-
-  def book_params
-    params.require(:book).parmit(:title, :body)
-  end
 end
