@@ -3,13 +3,16 @@
 
 <%= @book.each do |book| %>
 
-<p>Title</p>
+<p>Title
 <span><%= book.title %></span>
+
+</p>
 
 <% end %>
 
 <h2>New book</h2>
-<%= form_with to_model: @book do |f| %>
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
+
 <h4>Title</h4>
 <%= f.text_field:title %>
 
